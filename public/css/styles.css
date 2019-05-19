@@ -1,0 +1,121 @@
+html,
+body {
+    background-color: rgb(255, 255, 255);
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-weight: bolder;
+}
+
+#header {
+    background: url('../images/breakfast-brunch-cafe-2220618.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+.find_input {
+    padding: 2px 4px;
+    outline: 0;
+    border: 0px;
+    font-size: 28px;
+    color: #636b6f;
+}
+
+.find_input::placeholder {
+    text-align: center;
+}
+
+.first_find {
+    border-radius: 10px 0 0 10px;
+}
+
+.second_find:before {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 1px;
+    height: 100%;
+    content: '';
+    background: #ccc;
+}
+
+#sbtn {
+    height: 100%;
+    width: 25%;
+    position: absolute;
+    left: 320px;
+    top: 0;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 0 10px 10px 0;
+}
+
+#sbtn .fa-search {
+    font-size: 20px;
+    position: absolute;
+    top: 26%;
+    left: 35%;
+}
+
+#sbtn:hover {
+    color: #888;
+    cursor: pointer;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+    align-items: center;
+    display: flex;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.content {
+    text-align: center;
+    transform: translate(0, 50%);
+}
+
+.title {
+    font-size: 84px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: 2px 2px 1px #ffffff, -2px 2px 1px #ffffff, 2px -2px 1px #ffffff,
+        -2px -2px 1px #ffffff;
+}
+
+.links > a {
+    color: white;
+    margin-top: 10px;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.navbar {
+    background: transparent !important;
+    box-shadow: none !important;
+    position: absolute !important;
+    width: 100% !important;
+}
