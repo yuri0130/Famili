@@ -45,7 +45,7 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $business->image = $request->image;
+        $business->image = $request->file('image')->store('images');
         $business->save();
 
         return redirect('/businesses');

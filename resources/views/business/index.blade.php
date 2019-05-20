@@ -1,11 +1,15 @@
-@extends('layouts.app') @section('content')
-<div class="container">
-    @foreach($businesses as $business)
+@extends('layouts.app') @section('nav') @extends('layouts.homenav') @endsection
+@section('content') @foreach($businesses as $business)
 
+<div class="container mt-5">
     <div class="row">
         <div class="col-6 offset-3">
             <h1>{{ $business->name }}</h1>
         </div>
+    </div>
+
+    <div class="row">
+        <img src="{{ url('images'.$business->image) }}" />
     </div>
 
     <div class="row">
@@ -38,7 +42,5 @@
             <p>{{ $business.image }}</p>
         </div>
     </div> --}} -->
-
-    @endforeach
 </div>
-@endsection
+@endforeach @endsection
