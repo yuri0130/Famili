@@ -9,7 +9,7 @@
     </div>
 
     <div class="row">
-        <img src="{{ url('images'.$business->image) }}" />
+        <img src="/storage/{{ $business->image }}" />
     </div>
 
     <div class="row">
@@ -35,12 +35,5 @@
             <p>{{ $business->description }}</p>
         </div>
     </div>
-
-    <!-- {{-- <TODO>
-      <div class="row">
-        <div class="col-6 offset-3">
-            <p>{{ $business.image }}</p>
-        </div>
-    </div> --}} -->
 </div>
 @endforeach @endsection

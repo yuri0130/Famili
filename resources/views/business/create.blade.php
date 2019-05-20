@@ -14,7 +14,6 @@
                         enctype="multipart/form-data"
                     >
                         @csrf
-
                         <div class="form-group row mt-2">
                             <label
                                 for="name"
@@ -103,7 +102,7 @@
                             <div class="col-md-6">
                                 <input
                                     id="url"
-                                    type="text"
+                                    type="url"
                                     class="form-control"
                                     name="url"
                                     autocomplete="url"

@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Image;
+
+
 
 // php artisan make:controller BusinessController --resource
 // https://laravel.com/docs/5.8/controllers#defining-controllers
 
 class BusinessController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +54,16 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $business->image = $request->file('image')->store('images');
+
+
+        $data = request()->validate([
+            'image' => ['required', 'image'],
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+        $image = Image::make(public_path("/storage/{$imagePath}"))->fit(1200, 1200);
+
+
         $business->save();
 
         return redirect('/businesses');
@@ -57,9 +75,9 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function show(Business $business)
+    public function show(App\Business $business)
     {
-        //
+        return view('business.show', compact('business'));
     }
 
     /**
