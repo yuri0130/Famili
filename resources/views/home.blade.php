@@ -124,13 +124,13 @@
             <div class="card" style="width: 18rem;">
                 <img
                     class="card-img-top"
-                    src="{{$business->image}}"
+                    src="{{ Storage::url($business->image) }}"
                     alt="Card image cap"
                 />
                 <div class="card-body">
                     <h5 class="card-title">
                         <a
-                            href="/business/{{ $business->id}}"
+                            href="/business/{{ $business->id }}"
                             >{{ $business->name }}</a
                         >
                     </h5>

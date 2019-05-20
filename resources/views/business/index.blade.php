@@ -9,7 +9,7 @@
     </div>
 
     <div class="row">
-        <img src="/storage/{{ $business->image }}" />
+        <img src="{{ Storage::url($business->image) }}" />
     </div>
 
     <div class="row">

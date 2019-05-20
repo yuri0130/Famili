@@ -54,15 +54,7 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-
-
-        $data = request()->validate([
-            'image' => ['required', 'image'],
-        ]);
-
-        $imagePath = request('image')->store('uploads', 'public');
-        $image = Image::make(public_path("/storage/{$imagePath}"))->fit(1200, 1200);
-
+        $business->image = $request->file('image')->store('images');
 
         $business->save();
 
