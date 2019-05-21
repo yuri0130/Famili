@@ -142,6 +142,18 @@
                             >{{ $business->name }}</a
                         >
                     </h5>
+
+                    <div class="row">
+                    @for ($i = 0; $i < 5; $i++)
+                    @if ($business->rating <= $i) 
+                    <div class="bg-secondary mx-1 px-1"><i class="fas fa-star text-white"></i></div>
+                    @else 
+                    <div class="bg-danger mx-1 px-1"><i class="fas fa-star text-white"></i></div>
+
+                    @endif
+                    @endfor
+                    </div>
+
                     <p class="card-text">
                         {{ $business->description }}
                     </p>
