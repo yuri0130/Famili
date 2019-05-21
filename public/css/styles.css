@@ -1,8 +1,9 @@
 html,
 body {
     background-color: rgb(255, 255, 255);
-    color: #636b6f;
     font-family: 'Nunito', sans-serif;
+    color: #636b6f;
+    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -32,11 +33,10 @@ header {
 }
 
 .find_input {
-    padding: 2px 4px;
-    outline: 0;
     border: 0px;
-    font-size: 28px;
+    font-size: 25px;
     color: #636b6f;
+    width: 100%;
 }
 
 .find_input::placeholder {
@@ -59,21 +59,16 @@ header {
 
 #sbtn {
     height: 100%;
-    width: 25%;
-    position: absolute;
-    left: 320px;
-    top: 0;
-    background: red;
-    color: #fff;
+    width: 100%;
+    padding: 0;
+    background-color: red;
     border: none;
     border-radius: 0 10px 10px 0;
 }
 
 #sbtn .fa-search {
     font-size: 20px;
-    position: absolute;
-    top: 26%;
-    left: 35%;
+    margin-top: 5px;
 }
 
 #sbtn:hover {
@@ -123,12 +118,6 @@ header {
 
 .m-b-md {
     margin-bottom: 30px;
-}
-
-.hot-business-container {
-    width: 900px;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 footer {

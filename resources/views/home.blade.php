@@ -72,9 +72,10 @@
                 <a href="">Famili</a>
             </div>
 
-            <label class="row">
+            <form class="row justify-content-md-center">
+
                 <div
-                    class="col-sm-6 first_find"
+                    class="col-sm-5 first_find"
                     style="background-color: white;"
                 >
                     <input
@@ -86,7 +87,7 @@
                 </div>
 
                 <div
-                    class="col-sm-6 second_find"
+                    class="col-sm-5 second_find"
                     style="background-color: white;"
                 >
                     <input
@@ -95,11 +96,15 @@
                         name="Find"
                         placeholder="Area"
                     />
-                    <button id="sbtn" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
                 </div>
-            </label>
+
+                <div class="col-sm-2 p-0">
+                <button id="sbtn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                </div>
+
+            </form>
 
             <div class="links">
                 <a class="nav-link-item" href="https://laravel.com/docs"
@@ -116,17 +121,20 @@
     </div>
 </div>
 
-<div class="hot-business-container mt-5">
+<div class="mt-5 container">
     <h1 class="text-center">Hot & New</h1>
-    <div class="hot-businesses">
-        <div class="row">
+
+        <div class="row mt-5 justify-content-around">
             @foreach($businesses as $business)
+
+
             <div class="card" style="width: 18rem;">
                 <img
                     class="card-img-top"
                     src="{{ Storage::url($business->image) }}"
                     alt=""
                 />
+
                 <div class="card-body">
                     <h5 class="card-title">
                         <a
@@ -139,9 +147,10 @@
                     </p>
                 </div>
             </div>
+
             @endforeach
         </div>
-    </div>
+
 </div>
 
 <footer>
