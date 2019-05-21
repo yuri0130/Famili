@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Image;
-
 
 
 // php artisan make:controller BusinessController --resource
@@ -13,11 +11,6 @@ use Illuminate\Support\Facades\Image;
 
 class BusinessController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Display a listing of the resource.
@@ -58,7 +51,7 @@ class BusinessController extends Controller
 
         $business->save();
 
-        return redirect('/businesses');
+        return redirect('/businesses/' . $business->id);
     }
 
     /**
@@ -67,9 +60,12 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function show(App\Business $business)
+    public function show($business_id)
     {
-        return view('business.show', compact('business'));
+        $business = Business::findOrFail($business_id);
+        return view('business.show',  [
+            'business' => $business,
+        ]);
     }
 
     /**
