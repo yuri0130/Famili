@@ -19,10 +19,6 @@ a:hover {
     cursor: pointer;
 }
 
-.container {
-    font-weight: bolder;
-}
-
 header {
     background: url('../images/breakfast-brunch-cafe-2220618.jpg');
     background-size: cover;
@@ -149,4 +145,15 @@ ul {
 
 li {
     display: inline-block;
+}
+
+/* ここからbusinesses一覧pageのCSS */
+#businesses_main {
+    border-color: #d2cfcf;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }

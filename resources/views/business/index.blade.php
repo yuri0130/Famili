@@ -1,37 +1,27 @@
-@extends('layouts.app') @section('nav') @extends('layouts.homenav') @endsection
-@section('content') @foreach($businesses as $business)
+@extends('layouts.app') @extends('layouts.nav') @section('content')
+@foreach($businesses as $business)
 
-<div class="container mt-5">
+<div class="container mt-5" id="businesses_main">
     <div class="row">
-        <div class="col-6 offset-3">
-            <h1>{{ $business->name }}</h1>
+        <div class="col-4">
+            <img
+                src="{{ Storage::url($business->image) }}"
+                class="rounded img-fluid"
+            />
         </div>
-    </div>
 
-    <div class="row">
-        <img src="{{ Storage::url($business->image) }}" width="50px" />
-    </div>
+        <div class="col-8">
+            <h1>
+                <a
+                    href="businesses/{{ $business->id }}"
+                    >{{ $business->name }}</a
+                >
+            </h1>
 
-    <div class="row">
-        <div class="col-6 offset-3">
+            <p>{{ $business->prefecture }}</p>
+
             <p>{{ $business->address }}</p>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-6 offset-3">
-            <p>{{ $business->contact }}</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 offset-3">
-            <p>{{ $business->url }}</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 offset-3">
             <p>{{ $business->description }}</p>
         </div>
     </div>

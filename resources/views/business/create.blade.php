@@ -1,5 +1,4 @@
-@extends('layouts.app') @section('nav') @extends('layouts.homenav') @endsection
-@section('content')
+@extends('layouts.app') @extends('layouts.nav') @section('content')
 
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -43,6 +42,32 @@
 
                         <div class="form-group row">
                             <label
+                                for="prefecture"
+                                class="col-md-4 col-form-label text-md-right"
+                                >都道府県</label
+                            >
+
+                            <div class="col-md-6">
+                                <input
+                                    id="prefecture"
+                                    type="text"
+                                    class="form-control @error('prefecture') is-invalid @enderror"
+                                    name="prefecture"
+                                    value="{{ old('prefecture') }}"
+                                    required
+                                    autocomplete="prefecture"
+                                />
+
+                                @error('prefecture')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label
                                 for="address"
                                 class="col-md-4 col-form-label text-md-right"
                                 >住所</label
@@ -52,7 +77,7 @@
                                 <input
                                     id="address"
                                     type="text"
-                                    class="form-control @error('email') is-invalid @enderror"
+                                    class="form-control @error('address') is-invalid @enderror"
                                     name="address"
                                     value="{{ old('address') }}"
                                     required
@@ -78,7 +103,7 @@
                                 <input
                                     id="contact"
                                     type="text"
-                                    class="form-control @error('password') is-invalid @enderror"
+                                    class="form-control @error('contact') is-invalid @enderror"
                                     name="contact"
                                     required
                                     autocomplete="contact"
@@ -96,17 +121,23 @@
                             <label
                                 for="url"
                                 class="col-md-4 col-form-label text-md-right"
-                                >ウェブサイト</label
+                                >ホームページ</label
                             >
-
                             <div class="col-md-6">
                                 <input
                                     id="url"
-                                    type="url"
-                                    class="form-control"
+                                    type="text"
+                                    class="form-control @error('url') is-invalid @enderror"
                                     name="url"
+                                    required
                                     autocomplete="url"
                                 />
+
+                                @error('url')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -121,11 +152,17 @@
                                 <input
                                     id="description"
                                     type="text"
-                                    class="form-control"
+                                    class="form-control @error('description') is-invalid @enderror"
                                     name="description"
                                     required
                                     autocomplete="description"
                                 />
+
+                                @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
@@ -140,11 +177,17 @@
                                 <input
                                     id="image"
                                     type="file"
-                                    class="form-control-file"
+                                    class="form-control-file @error('image') is-invalid @enderror"
                                     name="image"
                                     required
                                     autocomplete="image"
                                 />
+
+                                @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 

@@ -43,11 +43,12 @@ class BusinessController extends Controller
     {
         $business = new Business;
         $business->name = $request->name;
+        $business->prefecture = $request->prefecture;
         $business->address = $request->address;
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $business->image = $request->file('image')->store('images');
+        $business->image = $request->file('image')->store('public/images');
 
         $business->save();
 

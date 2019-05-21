@@ -1,5 +1,5 @@
-@extends('layouts.app') @section('nav') @extends('layouts.homenav') @endsection
-@section('content')
+@extends('layouts.app') @extends('layouts.nav') @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
