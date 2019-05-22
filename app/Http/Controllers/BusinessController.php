@@ -19,8 +19,10 @@ class BusinessController extends Controller
      */
     public function index()
     {
+        $API_KEY = env('GOOGLE_API_KEY');
+
         $businesses = Business::all();
-        return view('business.index', ['businesses' => $businesses]);
+        return view('business.index', ['businesses' => $businesses, 'API_KEY' => $API_KEY]);
     }
 
     /**

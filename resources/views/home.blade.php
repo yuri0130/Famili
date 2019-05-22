@@ -106,17 +106,6 @@
 
             </form>
 
-            <div class="links">
-                <a class="nav-link-item" href="https://laravel.com/docs"
-                    >Playgrounds</a
-                >
-                <a class="nav-link-item" href="https://laracasts.com"
-                    >Restaurants</a
-                >
-                <a class="nav-link-item" href="https://laravel-news.com"
-                    >WIFI Spots</a
-                >
-            </div>
         </div>
     </div>
 </div>
