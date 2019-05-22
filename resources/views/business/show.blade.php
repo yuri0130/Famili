@@ -1,33 +1,52 @@
 @extends('layouts.app') @extends('layouts.nav') @section('content')
 
-<h2>詳細</h2>
+<div class="container mt-5">
+    <h1>
+        {{ $business->name }}
+    </h1>
 
-<h4>ビジネス名</h4>
-<p>
-    {{ $business->name }}
-</p>
-<h4>都道府県</h4>
-<p>
-    {{ $business->prefecture }}
-</p>
-<h4>住所</h4>
-<p>
-    {{ $business->address }}
-</p>
-<h4>電話番号</h4>
-<p>
-    {{ $business->contact }}
-</p>
-<h4>ウェブサイト</h4>
-<p>
-    {{ $business->url }}
-</p>
-<h4>ビジネスの説明</h4>
-<p>
-    {{ $business->description }}
-</p>
-<h4>ビジネス画像</h4>
-<p>
-    {{ $business->image }}
-</p>
+    <div class="row mb-2 pl-3">
+        @for ($i = 0; $i < 5; $i++) @if ($business->rating <= $i)
+        <div class="bg-secondary mx-1 p-1">
+            <i class="fas fa-star text-white"></i>
+        </div>
+        @else
+        <div class="bg-danger mx-1 p-1">
+            <i class="fas fa-star text-white"></i>
+        </div>
+        @endif @endfor
+    </div>
+
+    <p>
+        {{ $business->prefecture }}
+    </p>
+
+    <p>
+        {{ $business->address }}
+    </p>
+
+    <p>
+        {{ $business->contact }}
+    </p>
+
+    <p>
+        <a
+            href="{{ $business->url }}"
+            target="”_blank”"
+            >{{ $business->url }}</a
+        >
+    </p>
+
+    <p>
+        {{ $business->description }}
+    </p>
+
+    <p>
+        <img
+            src="{{ Storage::url($business->image) }}"
+            class="rounded img-fluid"
+        />
+    </p>
+</div>
+
 @endsection

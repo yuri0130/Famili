@@ -1,11 +1,11 @@
 @extends('layouts.app') @extends('layouts.nav') @section('content')
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-8">
             @foreach($businesses as $business)
 
-            <div class="mt-5" id="businesses_main">
+            <div id="businesses_main">
                 <div class="row">
                     <div class="col-4">
                         <img
@@ -15,12 +15,26 @@
                     </div>
 
                     <div class="col-8">
-                        <h1>
+                        <h1 id="businesses_name">
                             <a
                                 href="businesses/{{ $business->id }}"
                                 >{{ $business->name }}</a
                             >
                         </h1>
+
+                        <div class="row mb-2">
+                            @for ($i = 0; $i < 5; $i++) @if ($business->rating
+                            <= $i)
+                            <div class="bg-secondary mx-1 p-1">
+                                <i class="fas fa-star text-white"></i>
+                            </div>
+                            @else
+                            <div class="bg-danger mx-1 p-1">
+                                <i class="fas fa-star text-white"></i>
+                            </div>
+
+                            @endif @endfor
+                        </div>
 
                         <p>{{ $business->prefecture }}</p>
 
