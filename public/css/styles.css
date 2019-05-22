@@ -10,12 +10,8 @@ body {
 }
 
 h1 {
-    font-size: 1.25rem;
-}
-
-a {
-    color: unset;
-    text-decoration: unset;
+    font-size: 2.25rem;
+    font-weight: bolder;
 }
 
 a:hover {
@@ -101,7 +97,7 @@ header {
     transform: translate(0, 50%);
 }
 
-.title {
+.title a {
     font-size: 84px !important;
     font-weight: bolder !important;
     color: black !important;
@@ -154,8 +150,4 @@ img {
 #map {
     height: 300px;
     width: 300px;
-}
-
-#businesses_name {
-    color: #3490dc;
 }

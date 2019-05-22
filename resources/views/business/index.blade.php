@@ -15,14 +15,14 @@
                     </div>
 
                     <div class="col-8">
-                        <h1 id="businesses_name">
+                        <h3>
                             <a
-                                href="businesses/{{ $business->id }}"
+                                href="{{ $business->id }}"
                                 >{{ $business->name }}</a
                             >
-                        </h1>
+                        </h3>
 
-                        <div class="row mb-2">
+                        <div class="row mb-2 pl-2">
                             @for ($i = 0; $i < 5; $i++) @if ($business->rating
                             <= $i)
                             <div class="bg-secondary mx-1 p-1">

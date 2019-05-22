@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">ビジネスを登録</div>
+                <div class="card-header">施設を登録</div>
 
                 <div class="card-body">
                     <form
@@ -17,7 +17,7 @@
                             <label
                                 for="name"
                                 class="col-md-4 col-form-label text-md-right"
-                                >ビジネス名</label
+                                >施設名</label
                             >
 
                             <div class="col-md-6">
@@ -145,7 +145,7 @@
                             <label
                                 for="description"
                                 class="col-md-4 col-form-label text-md-right"
-                                >ビジネスの説明</label
+                                >施設の説明</label
                             >
 
                             <div class="col-md-6">
@@ -170,7 +170,7 @@
                             <label
                                 for="image"
                                 class="col-md-4 col-form-label text-md-right"
-                                >ビジネス画像</label
+                                >画像</label
                             >
 
                             <div class="col-md-6">
@@ -194,7 +194,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    登録
+                                    登録する
                                 </button>
                             </div>
                         </div>

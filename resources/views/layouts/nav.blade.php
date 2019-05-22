@@ -27,17 +27,15 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{
-                            __('Login')
-                        }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                     </li>
-                    @if (Route::has('signup'))
+                    @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signup') }}">{{
-                            __('Signup')
-                        }}</a>
+                        <a class="nav-link" href="{{ route('register') }}">会員登録</a>
                     </li>
-                    @endif @else
+                    @endif
+                    
+                    @else
                     <li class="nav-item dropdown">
                         <a
                             id="navbarDropdown"
@@ -63,7 +61,7 @@
                                 onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                             >
-                                {{ __('Logout') }}
+                                ログアウト
                             </a>
 
                             <form

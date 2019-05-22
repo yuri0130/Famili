@@ -101,5 +101,10 @@
             </div>
         </div>
     </div>
+
+    <div class="text-center mt-2">
+        <span>アカウントをお持ちではないですか？</span
+        ><a href="/register">会員登録</a>
+    </div>
 </div>
 @endsection
