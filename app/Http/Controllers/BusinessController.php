@@ -35,6 +35,8 @@ class BusinessController extends Controller
         return view('business.create');
     }
 
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -70,6 +72,9 @@ class BusinessController extends Controller
             'business' => $business,
         ]);
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

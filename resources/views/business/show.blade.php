@@ -8,7 +8,7 @@
                     {{ $business->name }}
                 </h1>
 
-                <div class="row mb-2 pl-3 ">
+                <div class="row mb-2 pl-2 ">
                     @for ($i = 0; $i < 5; $i++) @if ($business->rating <= $i)
                     <div class="bg-secondary mx-1 p-1">
                         <i class="fas fa-star text-white"></i>
