@@ -82,9 +82,10 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function edit(Business $business)
+    public function edit($business_id)
     {
-        return view('business.edit',  [
+        $business = Business::findOrFail($business_id);
+        return view('business.edit', [
             'business' => $business,
         ]);
     }

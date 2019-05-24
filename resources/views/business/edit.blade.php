@@ -4,12 +4,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">施設を登録</div>
+                <div class="card-header">編集</div>
 
                 <div class="card-body">
                     <form
                         method="PATCH"
-                        action="{{ '/business/'.$business->id }}"
+                        action=""
                         enctype="multipart/form-data"
                     >
                         @csrf
@@ -198,7 +198,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    登録する
+                                    更新する
                                 </button>
                             </div>
                         </div>

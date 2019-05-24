@@ -5,19 +5,19 @@
         <div class="col-md-8">
             @foreach($businesses as $business)
 
-            <div id="businesses_main">
-                <div class="row">
+            <hr id="businesses_main">
+                <div class="row mb-2">
                     <div class="col-4">
                         <img
                             src="{{ Storage::url($business->image) }}"
-                            class="rounded img-fluid"
+                            class="rounded img-thumbnail"
                         />
                     </div>
 
                     <div class="col-8">
                         <h3>
                             <a
-                                href="{{ $business->id }}"
+                                href="/businesses/{{ $business->id }}"
                                 >{{ $business->name }}</a
                             >
                         </h3>
@@ -43,7 +43,7 @@
                         <p>{{ $business->description }}</p>
                     </div>
                 </div>
-            </div>
+            </hr>
             @endforeach
         </div>
 
