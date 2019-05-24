@@ -37,7 +37,7 @@ class BusinessController extends Controller
 
 
 
-    /**
+    /**m 
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -84,7 +84,9 @@ class BusinessController extends Controller
      */
     public function edit(Business $business)
     {
-        //
+        return view('business.edit',  [
+            'business' => $business,
+        ]);
     }
 
     /**
@@ -96,7 +98,17 @@ class BusinessController extends Controller
      */
     public function update(Request $request, Business $business)
     {
-        //
+        $business->name = $request->name;
+        $business->prefecture = $request->prefecture;
+        $business->address = $request->address;
+        $business->contact = $request->contact;
+        $business->description = $request->description;
+        $business->url = $request->url;
+        $business->image = $request->file('image')->store('public/images');
+
+        $business->save();
+
+        return redirect('/businesses/' . $business->id);
     }
 
     /**

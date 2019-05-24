@@ -14,7 +14,7 @@ class AddRatingToBusiness extends Migration
     public function up()
     {
         Schema::table('business', function (Blueprint $table) {
-            $table->integer('rating');
+            $table->bigInteger('rating')->default(0);
         });
     }
 
