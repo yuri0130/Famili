@@ -97,8 +97,11 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Business $business)
+    public function update(Request $request, Business_id $business_id)
     {
+
+        $business = Business::find($business_id);
+
         $business->name = $request->name;
         $business->prefecture = $request->prefecture;
         $business->address = $request->address;
