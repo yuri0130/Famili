@@ -6,6 +6,8 @@ use App\Business;
 use Illuminate\Http\Request;
 
 
+
+
 // php artisan make:controller BusinessController --resource
 // https://laravel.com/docs/5.8/controllers#defining-controllers
 
@@ -68,9 +70,10 @@ class BusinessController extends Controller
     public function show($business_id)
     {
         $business = Business::findOrFail($business_id);
-        return view('business.show',  [
-            'business' => $business,
-        ]);
+        return view(
+            'business.show',
+            compact('business')
+        );
     }
 
 
@@ -82,12 +85,10 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function edit($business_id)
+    public function edit($business)
     {
-        $business = Business::findOrFail($business_id);
-        return view('business.edit', [
-            'business' => $business,
-        ]);
+        $business = Business::findOrFail($business);
+        return view('business.edit', compact('business'));
     }
 
     /**
@@ -97,10 +98,8 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Business_id $business_id)
+    public function update(Request $request, Business $business)
     {
-
-        $business = Business::find($business_id);
 
         $business->name = $request->name;
         $business->prefecture = $request->prefecture;
@@ -109,7 +108,6 @@ class BusinessController extends Controller
         $business->description = $request->description;
         $business->url = $request->url;
         $business->image = $request->file('image')->store('public/images');
-
         $business->save();
 
         return redirect('/businesses/' . $business->id);
@@ -121,6 +119,8 @@ class BusinessController extends Controller
      * @param  \App\Business  $business
      * @return \Illuminate\Http\Response
      */
+
+
     public function destroy(Business $business)
     {
         //

@@ -8,11 +8,12 @@
 
                 <div class="card-body">
                     <form
-                        method="PATCH"
-                        action=""
+                        method="POST"
+                        action="/businesses/{{ $business->id }}"
                         enctype="multipart/form-data"
                     >
-                        @csrf
+                        @csrf @method('PATCH')
+
                         <div class="form-group row mt-2">
                             <label
                                 for="name"

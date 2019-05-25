@@ -19,8 +19,11 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create($review)
     {
+
+        $review = review::findOrFail($review);
+
         return view('review.create');
     }
 
@@ -30,7 +33,7 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $business_id　)
     { // 
     }
 

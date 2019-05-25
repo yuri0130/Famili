@@ -13,7 +13,11 @@
 
 Auth::routes();
 
-
+// Home Route
 Route::get('/', 'HomeController@index')->name('home');
+
+// Business Route
 Route::resource('businesses', 'BusinessController');
-Route::resource('review', 'ReviewController');
+
+// Review Routes
+Route::post('businesses/{business_id}/review', ['users' => 'ReviewController@store', 'as' => 'review.store']);

@@ -1,7 +1,7 @@
 @extends('layouts.app') @extends('layouts.nav') @section('content')
 
 <div class="container mt-5">
-    <div class="d-flex">
+    <div class="d-flex justify-content-around">
         <div>
             <h1>
                 {{ $business->name }}
@@ -41,9 +41,11 @@
             </div>
         </div>
 
-        <div id="review" class="ml-5 pt-1">
+        <div class="pt-1">
             <div class="mb-4">
-                <a href=""><i class="fas fa-star"></i>レビューを書く</a>
+                <a href="/businesses/{{ $business->id }}/review"
+                    ><i class="fas fa-star"></i>レビューを書く</a
+                >
             </div>
             <div>
                 <a class="btn" href="/businesses/{{ $business->id }}/edit"
