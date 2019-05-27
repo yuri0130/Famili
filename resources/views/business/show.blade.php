@@ -43,7 +43,7 @@
 
         <div class="pt-1">
             <div class="mb-4">
-                <a href="/businesses/{{ $business->id }}/review"
+                <a href="/businesses/{{ $business->id }}/review/create"
                     ><i class="fas fa-star"></i>レビューを書く</a
                 >
             </div>

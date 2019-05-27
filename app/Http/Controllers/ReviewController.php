@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Business;
+
 
 class ReviewController extends Controller
 {
@@ -19,12 +21,12 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($review)
+    public function create($business_id)
     {
 
-        $review = review::findOrFail($review);
+        $business = Business::findOrFail($business_id);
 
-        return view('review.create');
+        return view('review.create', compact('business'));
     }
 
     /**
