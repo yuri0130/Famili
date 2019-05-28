@@ -8,7 +8,7 @@
         action="/businesses/{{ $business->id }}"
         enctype="multipart/form-data"
     >
-        @csrf
+        @csrf @method('PATCH')
 
         <div class="form-group row mt-3">
             <div class="col-md-6">

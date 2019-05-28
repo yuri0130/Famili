@@ -70,7 +70,12 @@
                 <a href="">Famili</a>
             </div>
 
-            <form class="row justify-content-md-center">
+            <form 
+            action="/search" 
+            method="GET" 
+            role="search"
+            class="row justify-content-md-center">
+            @csrf
 
                 <div
                     class="col-sm-5 first_find"
@@ -78,9 +83,9 @@
                 >
                     <input
                         class="find_input"
-                        type="text"
-                        name="Find"
-                        placeholder="Keywords"
+                        type="search"
+                        name="search"
+                        placeholder="キーワード"
                     />
                 </div>
 
@@ -90,9 +95,9 @@
                 >
                     <input
                         class="find_input"
-                        type="text"
-                        name="Find"
-                        placeholder="Area"
+                        type="search"
+                        name="search"
+                        placeholder="エリア"
                     />
                 </div>
 

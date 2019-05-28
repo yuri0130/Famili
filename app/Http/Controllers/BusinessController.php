@@ -41,6 +41,18 @@ class BusinessController extends Controller
     }
 
 
+    public function search(Request $request)
+    {
+
+
+        $search = $request->get('search');
+        $businesses = Business::findOrFail('businesses')
+            ->where('name', 'prefecture', 'address', 'like', '%' . $search . '%')
+            ->paginate(5);
+
+        return view('business.index', ['businesses' => $businesses]);
+    }
+
 
     /**m 
      * Store a newly created resource in storage.

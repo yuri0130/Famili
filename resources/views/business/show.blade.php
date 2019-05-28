@@ -42,12 +42,6 @@
         </div>
 
         <div class="pt-1">
-            <div class="mb-4">
-                <a href="/businesses/{{ $business->id }}/review/create"
-                    ><i class="fas fa-star"></i>レビューを書く</a
-                >
-            </div>
-
             @can('edit_business')
             <div>
                 <a class="btn" href="/businesses/{{ $business->id }}/edit"
@@ -63,6 +57,19 @@
                     style=" width: 210px; height: 210px;"
                 />
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 justify-content-around">
+        <div id="review-form" class="row">
+            <h2>Reviews</h2>
+            <hr />
+        </div>
+
+        <div class="mt-4 row">
+            <a href="/businesses/{{ $business->id }}/review/create"
+                ><i class="fas fa-star"></i>レビューを書く</a
+            >
         </div>
     </div>
 </div>

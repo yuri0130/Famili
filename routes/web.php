@@ -22,3 +22,6 @@ Route::resource('businesses', 'BusinessController');
 // Review Routes
 Route::post('/businesses/{business_id}/review', ['users' => 'ReviewController@store', 'as' => 'review.store']);
 Route::get('/businesses/{business_id}/review/create', 'ReviewController@create');
+
+//Search Route
+Route::get('/search', 'BusinessController@search');
