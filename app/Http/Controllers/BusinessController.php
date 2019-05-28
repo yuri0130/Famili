@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use Illuminate\Http\Request;
-
-
+use Illuminate\Support\Facades\Gate;
 
 
 // php artisan make:controller BusinessController --resource
@@ -34,7 +33,11 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        return view('business.create');
+        if (Gate::allows('edit_business')) {
+            return view('business.create');
+        } else {
+            return redirect('/');
+        }
     }
 
 
@@ -87,8 +90,14 @@ class BusinessController extends Controller
      */
     public function edit($business)
     {
-        $business = Business::findOrFail($business);
-        return view('business.edit', compact('business'));
+
+
+        if (Gate::allows('edit_business')) {
+            $business = Business::findOrFail($business);
+            return view('business.edit', compact('business'));
+        } else {
+            return redirect('/');
+        }
     }
 
     /**

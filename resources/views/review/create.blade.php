@@ -9,24 +9,21 @@
         enctype="multipart/form-data"
     >
         @csrf
-        <div class="form-group row mt-2">
+
+        <div class="form-group row mt-3">
             <div class="col-md-6">
-                <input
+                <textarea
                     id="comment"
-                    type="text"
-                    class="form-control"
                     name="comment"
-                    value="{{ old('comment') }}"
-                    required
-                    autocomplete="comment"
-                    autofocus
-                    placeholder="こちらにレビューを残してください"
-                />
+                    style="width: 100%; height: 200px;"
+                >
+こちらにレビューを残してください。
+                </textarea>
             </div>
         </div>
 
         <div class="form-group row mb-0">
-            <div class="col-md-6 offset-md-4">
+            <div class="col-md-6">
                 <button type="submit" class="btn btn-primary">
                     書き込む
                 </button>

@@ -92,6 +92,10 @@ header {
     top: 10px;
 }
 
+.card-img-top {
+    height: 200px;
+}
+
 .content {
     text-align: center;
     transform: translate(0, 50%);

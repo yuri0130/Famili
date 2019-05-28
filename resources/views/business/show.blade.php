@@ -47,11 +47,15 @@
                     ><i class="fas fa-star"></i>レビューを書く</a
                 >
             </div>
+
+            @can('edit_business')
             <div>
                 <a class="btn" href="/businesses/{{ $business->id }}/edit"
                     >編集する</a
                 >
             </div>
+            @endcan
+
             <div>
                 <img
                     src="{{ Storage::url($business->image) }}"

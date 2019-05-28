@@ -48,6 +48,7 @@
         </div>
 
         <div class="col-md-4">
+
             <div id="map"></div>
             <script>
                 var map;
