@@ -84,7 +84,7 @@
                     <input
                         class="find_input"
                         type="search"
-                        name="search"
+                        name="keyword"
                         placeholder="キーワード"
                        
                     />
@@ -97,7 +97,7 @@
                     <input
                         class="find_input"
                         type="search"
-                        name="search"
+                        name="area"
                         placeholder="エリア"
 
                     />
