@@ -71,6 +71,12 @@
                 ><i class="fas fa-star"></i>レビューを書く</a
             >
         </div>
+
+        <!-- {{--@if ($business->reviews->count())
+        <span class="badge badge-primary">
+            レビュー {{ $business->review->count() }}件
+        </span>
+        @endif--}} -->
     </div>
 </div>
 @endsection

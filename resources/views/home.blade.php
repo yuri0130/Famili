@@ -90,6 +90,13 @@
                     />
                 </div>
 
+                <form 
+                action="/search" 
+                method="GET" 
+                role="search" 
+                class="row justify-content-md-center">
+                @csrf
+                
                 <div
                     class="col-sm-5 second_find"
                     style="background-color: white;"

@@ -1,6 +1,7 @@
 @extends('layouts.app') @extends('layouts.nav') @section('content')
 
 <div class="container">
+<h2 class="mt-4">{{ $input }}</h2>
     <div class="row mt-5">
         <div class="col-md-8">
     @foreach($businesses as $business)
