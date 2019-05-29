@@ -10,40 +10,37 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
+        $keyword = $request->query('keyword'); // will give what the user searched
+        $area = $request->query('area'); // will give what the user searched
 
 
-        //Search based on "keyword" 
-        // $input = $request->query('keyword'); // will give what the user searched
-        // if ($input == null) {
-        //     $businesses = Business::all();
-        //     return view('search.index', ['businesses' => $businesses, 'input' => ' ']);
-        // } else {
-        //     $businesses = DB::table('business')
-        //         ->where('name', 'like', '%' . $input . '%')
-        //         ->orWhere('description', 'like', '%' . $input . '%')
-        //         ->get();
-        //     if (sizeof($businesses) == 0) {
-        //         return view('search.index', ['businesses' => $businesses, 'input' => 'Sorry could not find any businsesses with the keyword : ' . $input]);
-        //     } else {
-        //         return view('search.index', ['businesses' => $businesses, 'input' => $input]);
-        //     }
-        // }
-
-        //Search based on "area" 
-        $input = $request->query('area'); // will give what the user searched
-        if ($input == null) {
+        if ($keyword != null && $area != null) {
+            $businesses = DB::table('business')
+                ->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('description', 'like', '%' . $keyword . '%')
+                ->orWhere('address', 'like', '%' . $area . '%')
+                ->orWhere('prefecture', 'like', '%' . $area . '%')
+                ->get();
+            return view('search.index', ['businesses' => $businesses, 'keyword' => $keyword,  'area' => $area]);
+        } else if ($keyword == null && $area == null) {
             $businesses = Business::all();
             return view('search.index', ['businesses' => $businesses, 'input' => '']);
-        } else {
+        } else if ($keyword != null && $area == null) {
             $businesses = DB::table('business')
-                ->where('address', 'like', '%' . $input . '%')
-                ->orWhere('prefecture', 'like', '%' . $input . '%')
+                ->where('name', 'like', '%' . $keyword . '%')
+                ->orWhere('description', 'like', '%' . $keyword . '%')
                 ->get();
-            if (sizeof($businesses) == 0) {
-                return view('search.index', ['businesses' => $businesses, 'input' => 'Sorry could not find any businsesses with the area : ' . $input]);
-            } else {
-                return view('search.index', ['businesses' => $businesses, 'input' => $input]);
-            }
+            return view('search.index', ['businesses' => $businesses, 'keyword' => $keyword]);
+        } else if ($keyword == null && $area != null) {
+            $businesses = DB::table('business')
+                ->where('address', 'like', '%' . $area . '%')
+                ->orWhere('prefecture', 'like', '%' . $area . '%')
+                ->get();
+            return view('search.index', ['businesses' => $businesses, 'area' => $area]);
+        } else if (sizeof($businesses) == 0) {
+            return Redirect::back('search.index');
+        } else {
+            return view('search.index', ['businesses' => $businesses, 'keyword' => $keyword,  'area' => $area]);
         }
     }
 }
