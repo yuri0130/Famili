@@ -86,6 +86,7 @@
                         type="search"
                         name="search"
                         placeholder="キーワード"
+                       
                     />
                 </div>
 
@@ -98,11 +99,12 @@
                         type="search"
                         name="search"
                         placeholder="エリア"
+
                     />
                 </div>
 
                 <div class="col-sm-2 p-0">
-                <button id="sbtn" type="submit">
+                <button id="sbtn" type="submit" value="search">
                     <i class="fas fa-search"></i>
                 </button>
                 </div>

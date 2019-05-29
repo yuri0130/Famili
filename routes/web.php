@@ -24,4 +24,4 @@ Route::post('/businesses/{business_id}/review', ['users' => 'ReviewController@st
 Route::get('/businesses/{business_id}/review/create', 'ReviewController@create');
 
 //Search Route
-Route::get('/search', 'BusinessController@search');
+Route::get('/search', 'SearchController@index');
