@@ -60,23 +60,24 @@
         </div>
     </div>
 
-    <div class="row mt-3 justify-content-around">
-        <div id="review-form" class="row">
-            <h2>Reviews</h2>
-            <hr />
-        </div>
-
-        <div class="mt-4 row">
+    <div class="mt-3 justify-content-around">
+        <div class="mt-4">
             <a href="/businesses/{{ $business->id }}/review/create"
                 ><i class="fas fa-star"></i>レビューを書く</a
             >
         </div>
 
-        <!-- {{--@if ($business->reviews->count())
-        <span class="badge badge-primary">
-            レビュー {{ $business->review->count() }}件
-        </span>
-        @endif--}} -->
+        <hr />
+        <h4>Reviews</h4>
+        @foreach($reviews as $review)
+        <div>
+            <!-- {{--<strong>{{ $review->user->name }}</strong>--}} -->
+
+            <p>{{ $review->comment }}</p>
+            <hr />
+            <br />
+        </div>
+        @endforeach
     </div>
 </div>
 @endsection

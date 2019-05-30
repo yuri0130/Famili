@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\Review;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
-
 
 // php artisan make:controller BusinessController --resource
 // https://laravel.com/docs/5.8/controllers#defining-controllers
@@ -58,7 +59,6 @@ class BusinessController extends Controller
         $business->description = $request->description;
         $business->url = $request->url;
         $business->image = $request->file('image')->store('public/images');
-
         $business->save();
 
         return redirect('/businesses/' . $business->id);
@@ -72,10 +72,20 @@ class BusinessController extends Controller
      */
     public function show($business_id)
     {
+
+
         $business = Business::findOrFail($business_id);
+
+        $documentLists = DB::table('document_user')->select('documents.id', 'documents.title', 'documents.content', 'categories.category_type', 'users.username', 'document_user.dateReceived');
+
+        $reviews = DB::table('review')
+            ->where('business_id', "=", $business_id)
+
+            ->get();
+
         return view(
             'business.show',
-            compact('business')
+            compact('business', 'reviews')
         );
     }
 

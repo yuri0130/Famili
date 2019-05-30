@@ -5,10 +5,10 @@
 
     <form
         method="POST"
-        action="/businesses/{{ $business->id }}"
+        action="businesses/{{ business_id }}/review"
         enctype="multipart/form-data"
     >
-        @csrf @method('PATCH')
+        @csrf
 
         <div class="form-group row mt-3">
             <div class="col-md-6">
@@ -16,9 +16,19 @@
                     id="comment"
                     name="comment"
                     style="width: 100%; height: 200px;"
+                    placeholder="こちらにレビューを残してください。"
                 >
-こちらにレビューを残してください。
                 </textarea>
+                <input
+                    type="hidden"
+                    name="business_id"
+                    value="{{ $business->id }}"
+                />
+                <input
+                    type="hidden"
+                    name="user_id"
+                    value="{{ auth()->user() }}"
+                />
             </div>
         </div>
 

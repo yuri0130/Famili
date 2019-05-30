@@ -11,6 +11,11 @@ class Business extends Model
 
     public function review()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany('App\Review')->whereNull('business_id', 'user_id');;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

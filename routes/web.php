@@ -20,7 +20,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::resource('businesses', 'BusinessController');
 
 // Review Routes
-Route::post('/businesses/{business_id}/review', ['users' => 'ReviewController@store', 'as' => 'review.store']);
+Route::post('/businesses/{business_id}/review', 'ReviewController@store');
 Route::get('/businesses/{business_id}/review/create', 'ReviewController@create');
 
 //Search Route
