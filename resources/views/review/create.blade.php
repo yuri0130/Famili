@@ -5,7 +5,7 @@
 
     <form
         method="POST"
-        action="businesses/{{ business_id }}/review"
+        action="/businesses/{{ $business->id }}/review"
         enctype="multipart/form-data"
     >
         @csrf
@@ -19,6 +19,11 @@
                     placeholder="こちらにレビューを残してください。"
                 >
                 </textarea>
+                <input
+                    type="hidden"
+                    name="rating"
+                    value="{{ $business->rating }}"
+                />
                 <input
                     type="hidden"
                     name="business_id"

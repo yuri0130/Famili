@@ -42,14 +42,13 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $business_id, $user_id)
+    public function store(Request $request, $business_id)
     {
         // dd($request);
         $review = new Review;
         $review->rating = $request->rating;
         $review->comment = $request->comment;
         $review->business_id = $request->business_id;
-        $review->user_id = $request->user_id;
 
 
         $review->save();

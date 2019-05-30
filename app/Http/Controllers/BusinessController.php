@@ -80,7 +80,6 @@ class BusinessController extends Controller
 
         $reviews = DB::table('review')
             ->where('business_id', "=", $business_id)
-
             ->get();
 
         return view(
