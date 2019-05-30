@@ -25,41 +25,41 @@
         >
             <div class="col-md-6">
                 <span
-                    onmouseover="starRating(this)"
-                    onclick="starRating(this)"
-                    id="star-1"
-                    style="font-size:20px;cursor:pointer; color:orange;"
+                    onmouseover="starmark(this)"
+                    onclick="starmark(this)"
+                    id="1one"
+                    style="font-size:20px;cursor:pointer;color:red"
                     class="fa fa-star"
                 ></span>
                 <span
-                    onmouseover="starRating(this)"
-                    onclick="starRating(this)"
-                    id="star-2"
-                    style="font-size:20px;cursor:pointer;"
+                    onmouseover="starmark(this)"
+                    onclick="starmark(this)"
+                    id="2one"
+                    style="font-size:20px;cursor:pointer;color:gray;"
+                    class="fa fa-star "
+                ></span>
+                <span
+                    onmouseover="starmark(this)"
+                    onclick="starmark(this)"
+                    id="3one"
+                    style="font-size:20px;cursor:pointer;color:gray;"
+                    class="fa fa-star "
+                ></span>
+                <span
+                    onmouseover="starmark(this)"
+                    onclick="starmark(this)"
+                    id="4one"
+                    style="font-size:20px;cursor:pointer;color:gray;"
                     class="fa fa-star"
                 ></span>
                 <span
-                    onmouseover="starRating(this)"
-                    onclick="starRating(this)"
-                    id="star-3"
-                    style="font-size:20px;cursor:pointer;"
+                    onmouseover="starmark(this)"
+                    onclick="starmark(this)"
+                    id="5one"
+                    style="font-size:20px;cursor:pointer;color:gray;"
                     class="fa fa-star"
                 ></span>
-                <span
-                    onmouseover="starRating(this)"
-                    onclick="starRating(this)"
-                    id="star-4"
-                    style="font-size:20px;cursor:pointer;"
-                    class="fa fa-star"
-                ></span>
-                <span
-                    onmouseover="starRating(this)"
-                    onclick="starRating(this)"
-                    id="star-5"
-                    style="font-size:20px;cursor:pointer;"
-                    class="fa fa-star"
-                ></span>
-                <br />
+
                 <textarea
                     id="comment"
                     name="comment"
@@ -99,15 +99,15 @@
 </div>
 <script>
     var count;
-    function starRating(item) {
+    function starmark(item) {
         count = item.id[0];
         sessionStorage.starRating = count;
         var subid = item.id.substring(1);
         for (var i = 0; i < 5; i++) {
             if (i < count) {
-                document.getElementById(i + 1 + subid).style.color = 'orange';
+                document.getElementById(i + 1 + subid).style.color = 'red';
             } else {
-                document.getElementById(i + 1 + subid).style.color = 'black';
+                document.getElementById(i + 1 + subid).style.color = 'gray';
             }
         }
     }
