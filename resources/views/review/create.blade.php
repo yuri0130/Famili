@@ -24,30 +24,42 @@
                cursor: text; padding: 18px; max-width: 630px;"
         >
             <div class="col-md-6">
-                <script>
-                    function myFunction() {
-                        document.getElementById('rating');
-                    }
-                    <div>
-                        <div class="row mb-2 pl-3">
-                            <div class="bg-secondary mx-1 p-1" id="star-1">
-                                <i class="fas fa-star text-white" />
-                            </div>
-                            <div class="bg-secondary mx-1 p-1" id="star-2">
-                                <i class="fas fa-star text-white" />
-                            </div>
-                            <div class="bg-secondary mx-1 p-1" id="star-3">
-                                <i class="fas fa-star text-white" />
-                            </div>
-                            <div class="bg-secondary mx-1 p-1" id="star-4">
-                                <i class="fas fa-star text-white" />
-                            </div>
-                            <div class="bg-secondary mx-1 p-1" id="star-5">
-                                <i class="fas fa-star text-white" />
-                            </div>
-                        </div>
-                    </div>;
-                </script>
+                <span
+                    onmouseover="starRating(this)"
+                    onclick="starRating(this)"
+                    id="star-1"
+                    style="font-size:20px;cursor:pointer; color:orange;"
+                    class="fa fa-star"
+                ></span>
+                <span
+                    onmouseover="starRating(this)"
+                    onclick="starRating(this)"
+                    id="star-2"
+                    style="font-size:20px;cursor:pointer;"
+                    class="fa fa-star"
+                ></span>
+                <span
+                    onmouseover="starRating(this)"
+                    onclick="starRating(this)"
+                    id="star-3"
+                    style="font-size:20px;cursor:pointer;"
+                    class="fa fa-star"
+                ></span>
+                <span
+                    onmouseover="starRating(this)"
+                    onclick="starRating(this)"
+                    id="star-4"
+                    style="font-size:20px;cursor:pointer;"
+                    class="fa fa-star"
+                ></span>
+                <span
+                    onmouseover="starRating(this)"
+                    onclick="starRating(this)"
+                    id="star-5"
+                    style="font-size:20px;cursor:pointer;"
+                    class="fa fa-star"
+                ></span>
+                <br />
                 <textarea
                     id="comment"
                     name="comment"
@@ -85,5 +97,29 @@
         </div>
     </form>
 </div>
-
+<script>
+    var count;
+    function starRating(item) {
+        count = item.id[0];
+        sessionStorage.starRating = count;
+        var subid = item.id.substring(1);
+        for (var i = 0; i < 5; i++) {
+            if (i < count) {
+                document.getElementById(i + 1 + subid).style.color = 'orange';
+            } else {
+                document.getElementById(i + 1 + subid).style.color = 'black';
+            }
+        }
+    }
+    function result() {
+        //Rating : Count
+        //Review : Comment(id)
+        alert(
+            'Rating : ' +
+                count +
+                '\nReview : ' +
+                document.getElementById('comment').value
+        );
+    }
+</script>
 @endsection
