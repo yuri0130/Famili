@@ -42,7 +42,7 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $business_id)
     {
         $review = new Review;
         $review->rating = $request->rating;
@@ -51,7 +51,7 @@ class ReviewController extends Controller
         $user = Auth::user();
 
         $review->save();
-        return redirect('/businesses/{{ $business->id }}');
+        return redirect('/businesses/' . $business_id);
     }
 
     /**
