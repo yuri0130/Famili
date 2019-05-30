@@ -4,7 +4,9 @@
     <div class="d-flex justify-content-around">
         <div>
             <h1>
-                {{ $business->name }}
+                <strong>
+                    {{ $business->name }}
+                </strong>
             </h1>
 
             <div class="row mb-2 pl-3">
