@@ -73,10 +73,7 @@ class BusinessController extends Controller
     public function show($business_id)
     {
 
-
         $business = Business::findOrFail($business_id);
-
-        $documentLists = DB::table('document_user')->select('documents.id', 'documents.title', 'documents.content', 'categories.category_type', 'users.username', 'document_user.dateReceived');
 
         $reviews = DB::table('review')
             ->where('business_id', "=", $business_id)

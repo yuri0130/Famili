@@ -71,7 +71,8 @@
         <h4>Reviews</h4>
         @foreach($reviews as $review)
         <div>
-            <!-- {{--<strong>{{ $review->user->name }}</strong>--}} -->
+            {{--<strong>{{ $review->user->name }}</strong
+            >--}}
 
             <p>{{ $review->comment }}</p>
             <hr />

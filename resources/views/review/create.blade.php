@@ -19,11 +19,7 @@
                     placeholder="こちらにレビューを残してください。"
                 >
                 </textarea>
-                <input
-                    type="hidden"
-                    name="rating"
-                    value="{{ $business->rating }}"
-                />
+                <input name="rating" value="{{ $business->rating }}" />
                 <input
                     type="hidden"
                     name="business_id"

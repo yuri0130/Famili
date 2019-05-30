@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Business;
-use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\Review;
 
 class ReviewController extends Controller
@@ -42,14 +42,13 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $business_id)
+    public function store(Request $request)
     {
-        // dd($request);
         $review = new Review;
         $review->rating = $request->rating;
         $review->comment = $request->comment;
         $review->business_id = $request->business_id;
-
+        $user = Auth::user();
 
         $review->save();
         return redirect('/businesses/{{ $business->id }}');
