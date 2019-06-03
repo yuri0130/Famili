@@ -11,6 +11,11 @@
 |
 */
 
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
+
+
 Auth::routes();
 
 // Home Route
