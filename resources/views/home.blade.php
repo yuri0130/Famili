@@ -167,6 +167,7 @@
 </div>
 
 <footer>
+    <p><a href="businesses/create">create a business</a></p>
     <div class="container d-flex flex-center">
         <p>Created by Yurie</p>
 
