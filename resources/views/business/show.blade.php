@@ -63,14 +63,14 @@
     </div>
 
     <div class="mt-3 justify-content-around">
-        <div class="mt-4">
+        <div class="mt-4 text-right">
             <a href="/businesses/{{ $business->id }}/review/create"
                 ><i class="fas fa-star"></i>レビューを書く</a
             >
         </div>
 
         <hr />
-        <h4>Reviews</h4>
+        <h4 class="text-center">Reviews</h4>
         @foreach($reviews as $review)
         <div>
             {{--<strong>{{ $review->user->name }}</strong
