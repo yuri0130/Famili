@@ -63,7 +63,7 @@
     </div>
 
     <div class="mt-3 justify-content-around">
-        <div class="mt-4 ml-4 text-right">
+        <div class="mt-4 text-right">
             <a href="/businesses/{{ $business->id }}/review/create"
                 ><i class="fas fa-star"></i>レビューを書く</a
             >
