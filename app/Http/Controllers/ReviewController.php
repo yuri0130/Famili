@@ -51,7 +51,7 @@ class ReviewController extends Controller
         $review->rating = $request->rating;
         $review->comment = $request->comment;
         $review->business_id = $request->business_id;
-
+        $review->user_id = auth()->id();
 
         $review->save();
         return redirect('/businesses/' . $business_id);
