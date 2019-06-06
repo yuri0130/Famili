@@ -54,7 +54,7 @@
 
             <div>
                 <img
-                    src="{{ Storage::url($business->image) }}"
+                    src="{{ Storage::disk('s3')->url($business->image) }}"
                     class="rounded img-fluid"
                     style=" width: 210px; height: 210px;"
                 />

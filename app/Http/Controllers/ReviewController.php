@@ -14,6 +14,15 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    //コンストラクタ
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         $reviews = Review::all();
@@ -48,6 +57,7 @@ class ReviewController extends Controller
         $review->rating = $request->rating;
         $review->comment = $request->comment;
         $review->business_id = $request->business_id;
+        $review->user_id = $request->user_id;
         $user = Auth::user();
 
         $review->save();

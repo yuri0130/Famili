@@ -7,6 +7,7 @@ use App\Review;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Storage;
 
 // php artisan make:controller BusinessController --resource
 // https://laravel.com/docs/5.8/controllers#defining-controllers
@@ -58,7 +59,9 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $business->image = $request->file('image')->store('public/images');
+        // $business->image = $request->file('image')->store('public/images');
+        $file = $request->file('image');
+        $business->image = Storage::disk('s3')->put(' images/' . $business->name, $file);
         $business->save();
 
         return redirect('/businesses/' . $business->id);
@@ -122,7 +125,9 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $business->image = $request->file('image')->store('public/images');
+        // $business->image = $request->file('image')->store('public/images');
+        $file = $request->file('image');
+        $business->image = Storage::disk('s3')->put(' images/' . $business->name, $file);
         $business->save();
 
         return redirect('/businesses/' . $business->id);
