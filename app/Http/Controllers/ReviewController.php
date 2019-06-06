@@ -47,12 +47,11 @@ class ReviewController extends Controller
      */
     public function store(Request $request, $business_id)
     {
-        $review = new Review;
+        $review = new Review();
         $review->rating = $request->rating;
         $review->comment = $request->comment;
         $review->business_id = $request->business_id;
         $review->user_id = auth()->id();
-        $user = Auth::user();
 
         $review->save();
         return redirect('/businesses/' . $business_id);

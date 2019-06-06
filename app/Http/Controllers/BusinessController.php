@@ -52,7 +52,7 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        $business = new Business;
+        $business = new Business();
         $business->name = $request->name;
         $business->prefecture = $request->prefecture;
         $business->address = $request->address;
