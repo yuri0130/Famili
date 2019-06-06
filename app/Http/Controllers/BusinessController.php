@@ -62,6 +62,8 @@ class BusinessController extends Controller
         // $business->image = $request->file('image')->store('public/images');
         $file = $request->file('image');
         $business->image = Storage::disk('s3')->put(' images/' . $business->name, $file);
+
+
         $business->save();
 
         return redirect('/businesses/' . $business->id);
