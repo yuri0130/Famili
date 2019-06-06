@@ -53,7 +53,7 @@
             @endcan
             <div>
                 <img
-                    src="{{ ' images/' . $business->name, $file }}"
+                    src="{{ $business->image }}"
                     class="rounded img-fluid"
                     style=" width: 210px; height: 210px;"
                 />
