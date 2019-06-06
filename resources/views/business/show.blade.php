@@ -51,14 +51,10 @@
                 >
             </div>
             @endcan
-
-            <div>
-                <img
-                    src="{{ Storage::disk('s3')->url($business->image) }}"
-                    class="rounded img-fluid"
-                    style=" width: 210px; height: 210px;"
-                />
-            </div>
+            <!-- {{--<div>
+                <img src="{{ Storage::disk('s3')->url($business->image) }}" class="rounded img-fluid"
+                    style=" width: 210px; height: 210px;" />
+            </div>--}} -->
         </div>
     </div>
 
