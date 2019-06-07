@@ -85,15 +85,17 @@ class BusinessController extends Controller
     public function show($business_id)
     {
 
+
         $business = Business::findOrFail($business_id);
 
         $reviews = DB::table('review')
             ->where('business_id', "=", $business_id)
             ->get();
+        $path = Storage::disk('s3')->url('images.jpg');
 
         return view(
             'business.show',
-            compact('business', 'reviews')
+            compact('business', 'reviews', 'paths')
         );
     }
 
