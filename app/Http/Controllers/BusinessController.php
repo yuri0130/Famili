@@ -65,7 +65,7 @@ class BusinessController extends Controller
         // 第二引数はファイル
         // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
         // imagesディレクトリにアップロード
-        $path = Storage::disk('s3')->putFile('/images', $file, 'public');
+        $path = Storage::disk('s3')->put('/images', $file, 'public');
 
         // ファイル名を指定する場合はputFileAsを利用する
         // $path = Storage::disk('s3')->putFileAs('/', $file, 'hoge.jpg', 'public');
@@ -141,7 +141,7 @@ class BusinessController extends Controller
         // 第二引数はファイル
         // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
 
-        $path = Storage::disk('s3')->putFile('/', $file, 'public');
+        $path = Storage::disk('s3')->put('/', $file, 'public');
         // hogeディレクトリにアップロード
         // $path = Storage::disk('s3')->putFile('/hoge', $file, 'public');
         // ファイル名を指定する場合はputFileAsを利用する
