@@ -95,7 +95,7 @@ class BusinessController extends Controller
 
         return view(
             'business.show',
-            compact('business', 'reviews', 'paths')
+            compact('business', 'reviews', 'path')
         );
     }
 
