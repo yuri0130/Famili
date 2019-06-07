@@ -60,8 +60,9 @@ class BusinessController extends Controller
         $business->description = $request->description;
         $business->url = $request->url;
         // $business->image = $request->file('image')->store('public/images');
+        // $business->image = $request->file('image')->store('images', 's3');
         $file = $request->file('image');
-        $business->image = Storage::disk('s3')->put(' images/' . $business->name, $file);
+        $business->image = Storage::disk('s3')->put('images/' . $business->name, file_get_contents($file));
 
 
         $business->save();
@@ -127,9 +128,9 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        // $business->image = $request->file('image')->store('public/images');
         $file = $request->file('image');
-        $business->image = Storage::disk('s3')->put(' images/' . $business->name, $file);
+        Storage::disk('s3')->put('images/' . $business->name, file_get_contents($file));
+        $business->image = 'images/' . $business->name;
         $business->save();
 
         return redirect('/businesses/' . $business->id);

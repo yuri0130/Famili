@@ -53,7 +53,7 @@
             @endcan
             <div>
                 <img
-                    src=".$file."
+                    src="{{ Storage::disk('s3')->url('images/%E6%84%9B%E7%9F%A5%E3%81%93%E3%81%A9%E3%82%82%E3%81%AE%E5%9B%BD') }}"
                     class="rounded img-fluid"
                     style=" width: 210px; height: 210px;"
                 />
