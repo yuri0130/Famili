@@ -59,10 +59,16 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        // $business->image = $request->file('image')->store('public/images');
-        // $business->image = $request->file('image')->store('images', 's3');
-        $file = $request->file('image');
-        $business->image = Storage::disk('s3')->put('images/' . $business->name, file_get_contents($file));
+        $file = $request->file('file');
+
+        // 第一引数はディレクトリの指定
+        // 第二引数はファイル
+        // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
+        // imagesディレクトリにアップロード
+        $path = Storage::disk('s3')->putFile('/images', $file, 'public');
+
+        // ファイル名を指定する場合はputFileAsを利用する
+        // $path = Storage::disk('s3')->putFileAs('/', $file, 'hoge.jpg', 'public');
 
 
         $business->save();
@@ -128,9 +134,17 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $file = $request->file('image');
-        Storage::disk('s3')->put('images/' . $business->name, file_get_contents($file));
-        $business->image = 'images/' . $business->name;
+        $file = $request->file('file');
+        // 第一引数はディレクトリの指定
+        // 第二引数はファイル
+        // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
+
+        $path = Storage::disk('s3')->putFile('/', $file, 'public');
+        // hogeディレクトリにアップロード
+        // $path = Storage::disk('s3')->putFile('/hoge', $file, 'public');
+        // ファイル名を指定する場合はputFileAsを利用する
+        // $path = Storage::disk('s3')->putFileAs('/', $file, 'hoge.jpg', 'public');
+
         $business->save();
 
         return redirect('/businesses/' . $business->id);
