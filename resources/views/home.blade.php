@@ -132,7 +132,7 @@
             <div class="card" style="width: 18rem;">
                 <img
                     class="card-img-top"
-                    src="{{ Storage::url($business->image) }}"
+                    src="{{ Storage::disk('s3')->url($business->image) }}"
                     alt=""
                 />
 

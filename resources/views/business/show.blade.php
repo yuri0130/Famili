@@ -53,7 +53,7 @@
             @endcan
             <div>
                 <img
-                    src="{{ $path }}"
+                    src="{{ $url }}"
                     class="rounded img-fluid"
                     style="
                 width: 210px; height: 210px;"

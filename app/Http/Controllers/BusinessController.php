@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 
+
 // php artisan make:controller BusinessController --resource
 // https://laravel.com/docs/5.8/controllers#defining-controllers
 
@@ -59,18 +60,11 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $file = $request->file('file');
-
-        // 第一引数はディレクトリの指定
-        // 第二引数はファイル
-        // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
-        // imagesディレクトリにアップロード
-        $path = Storage::disk('s3')->put('/images', $file, 'public');
-
-        // ファイル名を指定する場合はputFileAsを利用する
-        // $path = Storage::disk('s3')->putFileAs('/', $file, 'hoge.jpg', 'public');
-
-
+        //s3アップロード開始
+        $image = $request->file('image');
+        // バケットの`images`フォルダへアップロード
+        $path = Storage::disk('s3')->put('images', $image, 'public');
+        $business->image = $path;
         $business->save();
 
         return redirect('/businesses/' . $business->id);
@@ -87,15 +81,14 @@ class BusinessController extends Controller
 
 
         $business = Business::findOrFail($business_id);
-
+        $url = Storage::disk('s3')->url($business->image);
         $reviews = DB::table('review')
             ->where('business_id', "=", $business_id)
             ->get();
-        $path = Storage::disk('s3')->url('images.jpg');
 
         return view(
             'business.show',
-            compact('business', 'reviews', 'path')
+            compact('business', 'reviews', 'path', 'url')
         );
     }
 
@@ -136,16 +129,11 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        $file = $request->file('file');
-        // 第一引数はディレクトリの指定
-        // 第二引数はファイル
-        // 第三引数はpublickを指定することで、URLによるアクセスが可能となる
-
-        $path = Storage::disk('s3')->put('/', $file, 'public');
-        // hogeディレクトリにアップロード
-        // $path = Storage::disk('s3')->putFile('/hoge', $file, 'public');
-        // ファイル名を指定する場合はputFileAsを利用する
-        // $path = Storage::disk('s3')->putFileAs('/', $file, 'hoge.jpg', 'public');
+        //s3アップロード開始
+        $image = $request->file('image');
+        // バケットの`images`フォルダへアップロード
+        $path = Storage::disk('s3')->put('images', $image, 'public');
+        $business->image = $path;
 
         $business->save();
 
