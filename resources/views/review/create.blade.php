@@ -20,8 +20,8 @@
 
         <div
             class="form-group row mt-3"
-            style="border: 1px solid #ccc; border-radius: 4px;
-               cursor: text; padding: 18px; max-width: 630px;"
+            style="border:1px solid #ccc; border-radius:4px;
+               cursor:text; padding:18px; max-width:630px;"
         >
             <div class="col-md-6">
                 <span
