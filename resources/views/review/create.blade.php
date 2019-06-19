@@ -81,6 +81,8 @@
                     name="user_id"
                     value="{{ auth()->user() }}"
                 />
+
+                <input type="hidden" name="rating" value="" id="rating" />
             </div>
         </div>
 
@@ -90,6 +92,7 @@
                     type="submit"
                     class="btn btn-primary"
                     style="min-width: 240px;"
+                    onclick="setRating(this)"
                 >
                     書き込む
                 </button>
@@ -109,6 +112,14 @@
             } else {
                 document.getElementById(i + 1 + subid).style.color = 'gray';
             }
+        }
+    }
+
+    function setRating(item) {
+        if (count === undefined) {
+            document.getElementById('rating').value = 1;
+        } else {
+            document.getElementById('rating').value = count;
         }
     }
     function result() {
