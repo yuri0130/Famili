@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\User;
 use App\Review;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -79,7 +80,7 @@ class BusinessController extends Controller
     public function show($business_id)
     {
 
-
+        $users = User::all();
         $business = Business::findOrFail($business_id);
         $url = Storage::disk('s3')->url($business->image);
         $reviews = DB::table('review')
@@ -88,7 +89,7 @@ class BusinessController extends Controller
 
         return view(
             'business.show',
-            compact('business', 'reviews',  'url')
+            compact('business', 'reviews',  'url', 'users')
         );
     }
 
