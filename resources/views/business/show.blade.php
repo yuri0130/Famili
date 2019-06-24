@@ -73,18 +73,18 @@
         <h4 class="text-center">Reviews</h4>
         @foreach($reviews as $review)
         <div>
-            <strong>
+            <strong class="user_name">
                 @foreach($users as $user) @if ($user->id === $review->user_id)
                 {{ $user->name }} @endif @endforeach
             </strong>
 
-            <div class="row mb-2 pl-2">
+            <div class="row mb-2 mt-2 pl-2">
                 @for ($i = 0; $i < 5; $i++) @if ($review->rating <= $i)
-                <div class="bg-secondary mx-1 px-1">
+                <div class="bg-secondary mx-1 p-1">
                     <i class="fas fa-star text-white"></i>
                 </div>
                 @else
-                <div class="bg-danger mx-1 px-1">
+                <div class="bg-danger mx-1 p-1">
                     <i class="fas fa-star text-white"></i>
                 </div>
 
