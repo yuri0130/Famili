@@ -71,6 +71,8 @@
                 <a href="">Famili</a>
             </div>
 
+
+        <div id="search_section">
             <form 
             action="/search" 
             method="GET" 
@@ -91,12 +93,6 @@
                     />
                 </div>
 
-                <form 
-                action="/search" 
-                method="GET" 
-                role="search" 
-                class="row justify-content-md-center">
-                @csrf
                 
                 <div
                     class="col-sm-5 second_find"
@@ -118,6 +114,8 @@
                 </div>
 
             </form>
+          </div>
+
 
         </div>
     </div>
