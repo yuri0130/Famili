@@ -9,7 +9,7 @@
                 <div class="row mb-2">
                     <div class="col-4">
                         <img
-                            src="{{ Storage::disk('s3')->url($business->image) }}"
+                            src="{{  Storage::url($business->image) }}"
                             class="rounded img-thumbnail"
                         />
                     </div>

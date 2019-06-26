@@ -61,11 +61,8 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        //s3アップロード開始
-        $image = $request->file('image');
-        // バケットの`images`フォルダへアップロード
-        $path = Storage::disk('s3')->put('images', $image, 'public');
-        $business->image = $path;
+        $business->image = $request->file('image')->store('public/images');
+
         $business->save();
 
         return redirect('/businesses/' . $business->id);
@@ -82,7 +79,7 @@ class BusinessController extends Controller
 
         $users = User::all();
         $business = Business::findOrFail($business_id);
-        $url = Storage::disk('s3')->url($business->image);
+        $url = Storage::url($business->image);
         $reviews = DB::table('review')
             ->where('business_id', "=", $business_id)
             ->get();
@@ -130,11 +127,7 @@ class BusinessController extends Controller
         $business->contact = $request->contact;
         $business->description = $request->description;
         $business->url = $request->url;
-        //s3アップロード開始
-        $image = $request->file('image');
-        // バケットの`images`フォルダへアップロード
-        $path = Storage::disk('s3')->put('images', $image, 'public');
-        $business->image = $path;
+        $business->image = $request->file('image')->store('public/images');
 
         $business->save();
 

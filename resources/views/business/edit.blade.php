@@ -183,7 +183,7 @@
                                     type="file"
                                     class="form-control-file @error('image') is-invalid @enderror"
                                     name="image"
-                                    value="{{ $business->image }}"
+                                    value="{{  Storage::url($business->image) }}"
                                     required
                                     autocomplete="image"
                                 />
