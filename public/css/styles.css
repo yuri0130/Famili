@@ -7,7 +7,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 h1 {
@@ -155,4 +154,8 @@ li {
 
 .user_name {
     font-size: 1em;
+}
+
+@media (min-width: 576px) .col-sm-2 {
+    max-width: 10.666667%;
 }
