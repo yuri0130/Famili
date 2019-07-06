@@ -174,7 +174,6 @@
 
         <ul>
             <li class="pl-2"><a href="https://github.com/yuri0130" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li class="pl-2"><a href="https://www.linkedin.com/in/yurie-shiga-969180111/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
             <li class="pl-2"><a href="https://yurisc.com/portfolio" target="_blank"><i class="fas fa-home"></i></a></li>
 
         </ul>
