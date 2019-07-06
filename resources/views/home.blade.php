@@ -134,7 +134,7 @@
             <div class="card" style="width: 18rem;">
                 <img
                     class="card-img-top"
-                    src="{{  Storage::url($business->image) }}"
+                    src="{{  url($business->image) }}"
                     alt=""
                 />
 
