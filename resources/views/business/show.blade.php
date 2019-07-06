@@ -53,7 +53,7 @@
             @endcan
             <div>
                 <img
-                    src="{{  Storage::url($business->image) }}"
+                    src="{{ url($business->image) }}"
                     class="rounded img-fluid"
                     style="
                 width: 210px; height: 210px;"

@@ -33,7 +33,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'https://www.kodomo-aichi.jp/',
             'description' => '広大な児童総合遊園施設です',
             'rating' => 3,
-            'image' => 'public/images/aichi_kodomono_kuni.jpg',
+            'image' => 'images/aichi_kodomono_kuni.jpg',
         ]);
 
         DB::table('business')->insert([
@@ -44,7 +44,7 @@ class BaseTableSeeder extends Seeder
             'url' =>  ' https://carne.crayonsite.net/ ',
             'description' => '二階にプレイルームがあり、子連れランチに最適なレストランです',
             'rating' => 4,
-            'image' => 'public/images/oyakoCafe.jpg',
+            'image' => 'images/oyakoCafe.jpg',
         ]);
 
         DB::table('business')->insert([
@@ -55,7 +55,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'http://www.aiboku.com/',
             'description' => '名古屋市から日帰りで行けるレジャー施設です',
             'rating' => 4,
-            'image' => 'public/images/愛知牧場.jpeg',
+            'image' => 'images/愛知牧場.jpeg',
         ]);
         DB::table('business')->insert([
             'name' =>  '東京ディズニーランド',
@@ -65,7 +65,7 @@ class BaseTableSeeder extends Seeder
             'url' =>  ' https://www.tokyodisneyresort.jp/tdl/',
             'description' => '千葉県にあるディズニーランドです。東京から電車で行くことができ、子連れにも最適な夢の国です。',
             'rating' => 5,
-            'image' => 'public/images/ディズニーランド.jpeg',
+            'image' => 'images/ディズニーランド.jpeg',
         ]);
         DB::table('business')->insert([
             'name' => 'KICHIRI 渋谷 宮益坂下',
@@ -75,7 +75,7 @@ class BaseTableSeeder extends Seeder
             'url' => '	http://www.kichiri.co.jp/shop/kichiri-new-japan-style/007/',
             'description' => 'キッズチェア、オムツ替え施設、授乳室も完備のダイニングレストラン',
             'rating' => 3,
-            'image' => 'public/images/tokyorestaurant.jpg',
+            'image' => 'images/tokyorestaurant.jpg',
         ]);
 
         DB::table('business')->insert([
@@ -86,7 +86,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'http://www.kidsplaza.or.jp/',
             'description' => '子どもたちが遊びや体験を通して科学や社会の仕組みを学ぶことができる参加体験型博物館',
             'rating' => 4,
-            'image' => 'public/images/kidsland.jpg',
+            'image' => 'images/kidsland.jpg',
         ]);
         DB::table('business')->insert([
             'name' => 'Baby Land（ベビーランド）',
@@ -96,7 +96,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'https://baby-land1504.com/',
             'description' => '広いキッズスペースです',
             'rating' => 4,
-            'image' => 'public/images/oyakoCafe.jpg',
+            'image' => 'images/oyakoCafe.jpg',
         ]);
         DB::table('business')->insert([
             'name' => 'いちごハウス　こもの園',
@@ -106,7 +106,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'http://www5.cty-net.ne.jp/~t1212/',
             'description' => 'いちご狩り施設です',
             'rating' => 3,
-            'image' => 'public/images/berries-delicious-fresh-393768.jpg',
+            'image' => 'images/berries-delicious-fresh-393768.jpg',
         ]);
         DB::table('business')->insert([
             'name' => 'ナガシマスパーランド',
@@ -116,7 +116,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'https://www.nagashima-onsen.co.jp/',
             'description' => '東海最大級の遊園地です',
             'rating' => 3,
-            'image' => 'public/images/architecture-engineering-entertainment-106155.jpg',
+            'image' => 'images/architecture-engineering-entertainment-106155.jpg',
         ]);
         DB::table('business')->insert([
             'name' => 'レゴランド',
@@ -126,7 +126,7 @@ class BaseTableSeeder extends Seeder
             'url' => 'https://tokyo.legolanddiscoverycenter.jp/',
             'description' => '東京のお台場にあるレゴランドです',
             'rating' => 4,
-            'image' => 'public/images/blur-blurred-background-close-up-1660662.jpg',
+            'image' => 'images/blur-blurred-background-close-up-1660662.jpg',
         ]);
     }
 }
