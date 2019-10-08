@@ -63,7 +63,6 @@
             </div>
         </div>
     </nav>
-</header>
 
 
     
@@ -80,6 +79,7 @@
             role="search"
             class="row justify-content-md-center">
             @csrf
+          
 
                 <div
                     class="col-sm-5 first_find"
@@ -90,7 +90,6 @@
                         name="keyword"
                         placeholder="キーワード"/>
                 </div>
-            </form>
 
                 <form 
                 action="/search" 
@@ -98,7 +97,7 @@
                 role="search" 
                 class="row justify-content-md-center">
                 @csrf
-                
+               
                 <div
                     class="col-sm-5 second_find"
                     style="background-color: white;">
@@ -108,14 +107,14 @@
                         name="area"
                         placeholder="エリア"/>
                 </div>
-
                 <div class="col-sm-2 p-0">
                 <button id="sbtn" type="submit" value="search">
                     <i class="fas fa-search"></i>
                 </button>
                 </div>
+  </form>
 
-            </form>
+           
 
         </div>
     </div>
