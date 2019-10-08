@@ -11,15 +11,17 @@
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">ログイン</a>
+                        <a class="nav-link" href="{{ route('login') }}"
+                            >ログイン</a
+                        >
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">会員登録</a>
+                        <a class="nav-link" href="{{ route('register') }}"
+                            >会員登録</a
+                        >
                     </li>
-                    @endif
-                    
-                    @else
+                    @endif @else
                     <li class="nav-item dropdown">
                         <a
                             id="navbarDropdown"
@@ -64,104 +66,106 @@
         </div>
     </nav>
 
-
-    
     <div class="flex-center position-ref">
         <div class="content">
             <div class="title m-b-md">
                 <a href="">Famili</a>
             </div>
 
-            
-            <form 
-            action="/search" 
-            method="GET" 
-            role="search"
-            class="row justify-content-md-center">
-            @csrf
-          
+            <div style="display:inline-flex">
+                <form
+                    action="/search"
+                    method="GET"
+                    role="search"
+                    class="justify-content-md-center"
+                >
+                    @csrf
 
-                <div
-                    class="col-sm-5 first_find"
-                    style="background-color: white;" >
-                    <input
-                        class="find_input"
-                        type="search"
-                        name="keyword"
-                        placeholder="キーワード"/>
-                </div>
+                    <div class="first_find" style="background-color: white;">
+                        <input
+                            class="find_input"
+                            type="search"
+                            name="keyword"
+                            placeholder="キーワード"
+                        />
+                    </div>
+                </form>
 
-                <form 
-                action="/search" 
-                method="GET" 
-                role="search" 
-                class="row justify-content-md-center">
-                @csrf
-               
-                <div
-                    class="col-sm-5 second_find"
-                    style="background-color: white;">
-                    <input
-                        class="find_input"
-                        type="search"
-                        name="area"
-                        placeholder="エリア"/>
-                </div>
-                <div class="col-sm-2 p-0">
-                <button id="sbtn" type="submit" value="search">
-                    <i class="fas fa-search"></i>
-                </button>
-                </div>
-  </form>
+                <form
+                    action="/search"
+                    method="GET"
+                    role="search"
+                    class="justify-content-md-center"
+                >
+                    @csrf
 
-           
+                    <div class="second_find" style="background-color: white;">
+                        <input
+                            class="find_input"
+                            type="search"
+                            name="area"
+                            placeholder="エリア"
+                        />
+                    </div>
+                </form>
 
+                <form
+                    action="/search"
+                    method="GET"
+                    role="search"
+                    class="justify-content-md-center"
+                >
+                    <button id="sbtn" type="submit" value="search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</header>
 
 <div class="mt-5 container">
     <h1 class="text-center">Hot & New</h1>
 
-        <div class="row mt-5 justify-content-around">
-            @foreach($businesses as $business)
+    <div class="row mt-5 justify-content-around">
+        @foreach($businesses as $business)
 
+        <div class="card" style="width: 18rem;">
+            <img
+                class="card-img-top"
+                src="{{  url($business->image) }}"
+                alt=""
+            />
 
-            <div class="card" style="width: 18rem;">
-                <img
-                    class="card-img-top"
-                    src="{{  url($business->image) }}"
-                    alt=""
-                />
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a
+                        href="/businesses/{{ $business->id }}"
+                        >{{ $business->name }}</a
+                    >
+                </h5>
 
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <a
-                            href="/businesses/{{ $business->id }}"
-                            >{{ $business->name }}</a
-                        >
-                    </h5>
-
-                    <div class="row mb-2 pl-2">
-                    @for ($i = 0; $i < 5; $i++)
-                    @if ($business->rating <= $i) 
-                    <div class="bg-secondary mx-1 px-1"><i class="fas fa-star text-white"></i></div>
-                    @else 
-                    <div class="bg-danger mx-1 px-1"><i class="fas fa-star text-white"></i></div>
-
-                    @endif
-                    @endfor
+                <div class="row mb-2 pl-2">
+                    @for ($i = 0; $i < 5; $i++) @if ($business->rating <= $i)
+                    <div class="bg-secondary mx-1 px-1">
+                        <i class="fas fa-star text-white"></i>
+                    </div>
+                    @else
+                    <div class="bg-danger mx-1 px-1">
+                        <i class="fas fa-star text-white"></i>
                     </div>
 
-                    <p class="card-text">
-                        {{ $business->description }}
-                    </p>
+                    @endif @endfor
                 </div>
-            </div>
 
-            @endforeach
+                <p class="card-text">
+                    {{ $business->description }}
+                </p>
+            </div>
         </div>
 
+        @endforeach
+    </div>
 </div>
 
 <footer>
@@ -169,9 +173,16 @@
         <p>Created by Yurie</p>
 
         <ul>
-            <li class="pl-2"><a href="https://github.com/yuri0130" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li class="pl-2"><a href="https://yurisc.com/portfolio" target="_blank"><i class="fas fa-home"></i></a></li>
-
+            <li class="pl-2">
+                <a href="https://github.com/yuri0130" target="_blank"
+                    ><i class="fab fa-github"></i
+                ></a>
+            </li>
+            <li class="pl-2">
+                <a href="https://yurisc.com/portfolio" target="_blank"
+                    ><i class="fas fa-home"></i
+                ></a>
+            </li>
         </ul>
     </div>
 </footer>

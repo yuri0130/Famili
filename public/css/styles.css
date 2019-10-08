@@ -47,23 +47,10 @@ header {
     border-radius: 10px 0 0 10px;
 }
 
-.second_find:before {
-    position: absolute;
-    top: 0;
-    left: -1px;
-    width: 1px;
-    height: 100%;
-    content: '';
-    background: #ccc;
-}
-
 #sbtn {
-    height: 100%;
-    width: 100%;
-    padding: 0;
     background-color: red;
     border: none;
-    border-radius: 0 10px 10px 0;
+    height: 100%;
 }
 
 #sbtn .fa-search {
