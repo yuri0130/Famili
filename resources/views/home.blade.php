@@ -63,6 +63,8 @@
             </div>
         </div>
     </nav>
+</header>
+
 
     
     <div class="flex-center position-ref">
@@ -81,16 +83,14 @@
 
                 <div
                     class="col-sm-5 first_find"
-                    style="background-color: white;"
-                >
+                    style="background-color: white;" >
                     <input
                         class="find_input"
                         type="search"
                         name="keyword"
-                        placeholder="キーワード"
-                       
-                    />
+                        placeholder="キーワード"/>
                 </div>
+            </form>
 
                 <form 
                 action="/search" 
@@ -101,15 +101,12 @@
                 
                 <div
                     class="col-sm-5 second_find"
-                    style="background-color: white;"
-                >
+                    style="background-color: white;">
                     <input
                         class="find_input"
                         type="search"
                         name="area"
-                        placeholder="エリア"
-
-                    />
+                        placeholder="エリア"/>
                 </div>
 
                 <div class="col-sm-2 p-0">
