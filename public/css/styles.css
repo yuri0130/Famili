@@ -43,8 +43,8 @@ header {
     text-align: center;
 }
 
-.first_find {
-    border-radius: 10px 0 0 10px;
+#first_find {
+    border-right: 1px solid #333;
 }
 
 #sbtn {

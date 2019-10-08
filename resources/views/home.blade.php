@@ -81,7 +81,7 @@
                 >
                     @csrf
 
-                    <div class="first_find" style="background-color: white;">
+                    <div id="first_find" style="background-color: white;">
                         <input
                             class="find_input"
                             type="search"
@@ -99,7 +99,7 @@
                 >
                     @csrf
 
-                    <div class="second_find" style="background-color: white;">
+                    <div id="second_find" style="background-color: white;">
                         <input
                             class="find_input"
                             type="search"
